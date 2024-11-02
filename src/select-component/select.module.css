@@ -1,0 +1,149 @@
+:root {
+  /* Backgrounds */
+  --red-1: #fffcfc;
+  --red-2: #fff8f7;
+  --gray-1: #fcfcfc;
+  --gray-2: #f9f9f9;
+
+  /* Interactive components */
+  --red-3: #ffeae8;
+  --red-4: #ffd9d7;
+  --red-5: #ffc9c6;
+  --gray-3: #f0f0f0;
+  --gray-4: #e8e8e8;
+  --gray-5: #e0e0e0;
+
+  /* Borders and separators */
+  --red-6: #ffb8b5;
+  --red-7: #fda29f;
+  --red-8: #f58685;
+  --gray-6: #d9d9d9;
+  --gray-7: #cecece;
+  --gray-8: #bbb;
+
+  /* Solid colors */
+  --red-9: #773636;
+  --red-10: #652627;
+  --gray-9: #8d8d8d;
+  --gray-10: #828282;
+
+  /* Accessible text */
+  --red-11: #b95051;
+  --red-12: #602223;
+  --gray-11: #646464;
+  --gray-12: #202020;
+}
+
+.container {
+  position: relative;
+  width: 20em;
+  min-height: 1.5em;
+  border: 0.1em solid var(--gray-8);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  outline: none;
+}
+
+.container:focus {
+  border-color: var(--red-8);
+}
+
+.value {
+  flex-grow: 1;
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.clear-btn {
+  background: none;
+  color: var(--gray-5);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.25em;
+}
+
+.clear-btn:focus,
+.clear-btn:hover {
+  color: var(--red-10);
+}
+
+.divider {
+  background-color: var(--gray-8);
+  align-self: stretch;
+  width: 0.05em;
+}
+
+.caret {
+  translate: 0 25%;
+  border: 0.25em solid transparent;
+  border-top-color: var(--gray-8);
+}
+
+.options {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: none;
+  max-height: 15em;
+  overflow-y: auto;
+  border: 0.1em solid var(--red-8);
+  border-radius: 0.25em;
+  width: 100%;
+  left: 0;
+  top: calc(100% + 0.25em);
+}
+
+.options.show {
+  display: block;
+}
+
+.option {
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.option.selected {
+  background-color: var(--red-10);
+  color: white;
+}
+
+.option.highlighted {
+  background-color: var(--red-9);
+  color: white;
+}
+
+.option-badge {
+  display: flex;
+  align-items: center;
+  border: 0.05em solid var(--gray-8);
+  border-radius: 0.25em;
+  padding: 0.15em 0.25em;
+  gap: 0.25em;
+  cursor: pointer;
+  background: none;
+  outline: none;
+}
+
+.option-badge:hover,
+.option-badge:focus {
+  background-color: var(--red-4);
+  border-color: var(--red-8);
+  color: var(--red-9);
+}
+
+.option-badge:hover > .remove-btn,
+.option-badge:focus > .remove-btn {
+  color: var(--red-10);
+}
+
+.option-badge > .remove-btn {
+  font-size: 1.25em;
+  color: var(--gray-10);
+}
